@@ -7,10 +7,10 @@ tags: "github jekyll"
 ---
 
 ###1. 申请域名   
-由于对于域名没有太多的了解，就随便在![新网](http://www.xinnet.com/)上申请了一个.com的域名。关于这个域名，我也是煞费苦心。申请之后无法使用，无法解析，而且注册人名不是我本人。给客服打电话，客服说域名需要过户，具体过程![请查看](http://www.xinnet.com/service/cjwt/domain/guohu/1184.html)。过户完成等了10多分钟才能使用。   
+由于对于域名没有太多的了解，就随便在[新网](http://www.xinnet.com/)上申请了一个.com的域名。关于这个域名，我也是煞费苦心。申请之后无法使用，无法解析，而且注册人名不是我本人。给客服打电话，客服说域名需要过户，具体过程[请查看](http://www.xinnet.com/service/cjwt/domain/guohu/1184.html)。过户完成等了10多分钟才能使用。   
 
 
-后来，才听同事说，![万网](http://wanwang.aliyun.com/domain/)很好用。然后，我对比了一下，发现新网做的不是一般的差，先不说域名服务如何，但从域名申请和管理的网站上看，新网就差万网一大截。我的心也一下凉了。然而，我又发现了另外一个功能，可以把新网的域名转到万网上，具体流程![请看](http://help.aliyun.com/knowledge_detail/6555809.html?spm=5176.789002828.3.3.lWZUX6)。但是这也需要时间，新网客服说需要二个月时间。哎，申请个域名好憔悴。如果你还没申请域名，而且打算申请，强烈建议在万网申请。   
+后来，才听同事说，[万网](http://wanwang.aliyun.com/domain/)很好用。然后，我对比了一下，发现新网做的不是一般的差，先不说域名服务如何，但从域名申请和管理的网站上看，新网就差万网一大截。我的心也一下凉了。然而，我又发现了另外一个功能，可以把新网的域名转到万网上，具体流程[请看](http://help.aliyun.com/knowledge_detail/6555809.html?spm=5176.789002828.3.3.lWZUX6)。但是这也需要时间，新网客服说需要二个月时间。哎，申请个域名好憔悴。如果你还没申请域名，而且打算申请，强烈建议在万网申请。   
 
 
 
@@ -27,7 +27,7 @@ tags: "github jekyll"
 
 ###2. 在新网上配置DNS     
 
-- 使用申请的域名登陆![新网域名自助管理平台](http://dcp.xinnet.com/Modules/agent/domain/domain_manage.jsp)。   
+- 使用申请的域名登陆[新网域名自助管理平台](http://dcp.xinnet.com/Modules/agent/domain/domain_manage.jsp)。   
 ![alt_text](/public/img/github/xinwang.jpg)   
 - 进入My DNS功能     
 ![alt_text](/public/img/github/mydns.png)    
