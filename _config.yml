@@ -6,7 +6,7 @@ markdown: redcarpet
 author: 
   name: Evan 
   email: mbbtx@163.com
-  link: http://fieelingtime.ifmicro.com
+  link: http://fieelingtime.com
 #weibo: http://weibo.com/orangeissweet
   github: http://github.com/lvniu
 #  music: http://site.douban.com/linanya
@@ -15,17 +15,17 @@ author:
 # 站点信息
 title: Evan的博客
 description: My personal blog
-url: http://fieelingtime.ifmicro.com
+url: http://fieelingtime.com
 rss_url: /pages/atom.xml
 
 # gavatar头像及Favicon
-gavatar: /public/img/deer3.png
-favicon: /public/img/deer3.png
+gavatar: /public/img/left_head.png
+favicon: /public/img/left_head.png
 
 # google analytics 设置
 ga:
   id: UA-67370528-1 
-  url: fieelingtime.ifmicro.com
+  url: fieelingtime.com
 
 # disqus 设置
 disqus:
