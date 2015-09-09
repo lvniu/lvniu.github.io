@@ -2,9 +2,11 @@
 <html>
 <head>
   <meta charset="utf-8">
-<title>归档 | Evan的博客</title>
+<title>github pages 绑定新网申请的域名 | Evan的博客</title>
 <meta name="author" content="Evan">
 
+
+  <meta name="description " content="">
 
 <link rel="shortcut icon" href="/public/img/left_head.png" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -167,107 +169,47 @@
             <div class="row">
   <div class="col-md-13 aside3-title">
     <br>
-    <h2 id="#identifier"><i class="fa fa-archive fa-lg"></i></h2>
+    <h2 id="#identifier">github pages 绑定新网申请的域名</h2>
+    2015年09月09日
   </div>
   <div class="col-md-13 aside3-content">
-    <div id="page-content">
-      
-    
-    
-    
-    
-  
-    
-      <legend id="2015-09">2015年-09月</legend>
-      <ul>
-    
-    <li><span>2015年-09月-09日</span> &raquo; 
-      <a class="pjaxlink" href="/2015/09/09/verify-blog-domain.html">github pages 绑定新网申请的域名</a>
-    </li>
-  
-    
-          
-        
-      
-    
+    <hr>
+    <div id="content">
+      <h3>1. 申请域名</h3>
 
-    
-    
-    
-    
-  
-    
-    <li><span>2015年-09月-09日</span> &raquo; 
-      <a class="pjaxlink" href="/2015/09/09/test.html">test</a>
-    </li>
-  
-    
-          
-        
-      
-    
+<p>由于对于域名没有太多的了解，就随便在<a href="http://www.xinnet.com/">新网</a>上申请了一个.com的域名。关于这个域名，我也是煞费苦心。申请之后无法使用，无法解析，而且注册人名不是我本人。给客服打电话，客服说域名需要过户，具体过程<a href="http://www.xinnet.com/service/cjwt/domain/guohu/1184.html">请查看</a>。过户完成等了10多分钟才能使用。   </p>
 
-    
-    
-    
-    
-  
-    
-    <li><span>2015年-09月-09日</span> &raquo; 
-      <a class="pjaxlink" href="/2015/09/09/test.html">test</a>
-    </li>
-  
-    
-          
-        
-      
-    
+<p>后来，才听同事说，<a href="http://wanwang.aliyun.com/domain/">万网</a>很好用。然后，我对比了一下，发现新网做的不是一般的差，先不说域名服务如何，但从域名申请和管理的网站上看，新网就差万网一大截。我的心也一下凉了。然而，我又发现了另外一个功能，可以把新网的域名转到万网上，具体流程<a href="http://help.aliyun.com/knowledge_detail/6555809.html?spm=5176.789002828.3.3.lWZUX6">请看</a>。但是这也需要时间，新网客服说需要二个月时间。哎，申请个域名好憔悴。如果你还没申请域名，而且打算申请，强烈建议在万网申请。   </p>
 
-    
-    
-    
-    
-  
-    
-    <li><span>2015年-09月-09日</span> &raquo; 
-      <a class="pjaxlink" href="/2015/09/09/test.html">test</a>
-    </li>
-  
-    
-          
-        
-      
-    
+<p>下面进入正题。    </p>
 
-    
-    
-    
-    
-  
-    
-    <li><span>2015年-09月-09日</span> &raquo; 
-      <a class="pjaxlink" href="/2015/09/09/markdown.html">markdown基本语法</a>
-    </li>
-  
-    
-          
-        
-      
-    
+<h3>2. github工程中创建CNAME文件</h3>
 
-    
-    
-    
-    
-  
-    
-    <li><span>2015年-09月-09日</span> &raquo; 
-      <a class="pjaxlink" href="/2015/09/09/blog-building.html">ubuntu 14.04使用github pages和jekyll搭建静态博客</a>
-    </li>
-  
-    
-      </ul>
-    
+<ul>
+<li>在名字为username.github.io的仓库根目录中添加CNAME文件。CNAME的内容为博客要添加的新域名。<br>
+<img src="/public/img/github/lvniu.png" alt="alt_text"><br>
+<img src="/public/img/github/CNAME.png" alt="alt_text"><br></li>
+<li>查看CNAME设置是否正确,如果提示“Your site is published at..”，说明配置成功。<br>
+<img src="/public/img/github/Settings1.png" alt="alt_text"><br>
+<img src="/public/img/github/Settings2.png" alt="alt_text"><br></li>
+</ul>
+
+<h3>2. 在新网上配置DNS</h3>
+
+<ul>
+<li>使用申请的域名登陆<a href="http://dcp.xinnet.com/Modules/agent/domain/domain_manage.jsp">新网域名自助管理平台</a>。<br>
+<img src="/public/img/github/xinwang.jpg" alt="alt_text"><br></li>
+<li>进入My DNS功能<br>
+<img src="/public/img/github/mydns.png" alt="alt_text"><br></li>
+<li>追加CNAME记录，别名处添加www就ok了，别名主机填写github上自己仓库的名称：username.github.io。<br>
+<img src="/public/img/github/cnamedns.png" alt="alt_text"><br></li>
+</ul>
+
+<h3>3. 查看域名映射结果</h3>
+
+<p>直接在浏览器输入配置好的域名。例如：www.fieelingtime.com。如果能够正常显示username.github.io中的index.html页面，则说明成功了。   </p>
+
+<p>如果显示404，则说明DNS还没有解析成功，请等待一段时间。</p>
 
     </div>
     <hr>
@@ -278,7 +220,14 @@
 </div>
 
   </div>
+  <!-- 目录 -->
+  <div id="content_table" style="position:fixed;right:20px;top:120px;display:none;">
+    <div class="panel panel-success">
+      <div class="panel-body" id="nav"></div>
+    </div>
+  </div>
 </div>
+
 
           </div>
         </div>

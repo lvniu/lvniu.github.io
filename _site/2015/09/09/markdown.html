@@ -31,9 +31,9 @@
              <!-- 这里是aside1的读书、生活、科研、技术、绘画-->
          <li><a href="#随想" data-toggle="tab">随想</a></li>
              <!-- 这里是aside1的读书、生活、科研、技术、绘画-->
-         <li><a href="#生活" data-toggle="tab">生活</a></li>
-             <!-- 这里是aside1的读书、生活、科研、技术、绘画-->
          <li><a href="#阅读" data-toggle="tab">阅读</a></li>
+             <!-- 这里是aside1的读书、生活、科研、技术、绘画-->
+         <li><a href="#生活" data-toggle="tab">生活</a></li>
         
         <li><a href="#tags" data-toggle="tab">标签</a></li>  
         <li><a class="pjaxlink" href="/pages/archive.html">归档</a></li>
@@ -60,9 +60,11 @@
               <div class="list-group">
                 <!--<h2 class="center">技术</h2>-->     <!--原来aside2上面的大标题-->
                 
+                  <a href="/2015/09/09/verify-blog-domain.html" class="list-group-item-lay pjaxlink">github pages 绑定新网申请的域名</a>
+                
                   <a href="/2015/09/09/markdown.html" class="list-group-item-lay pjaxlink">markdown基本语法</a>
                 
-                  <a href="/2015/09/09/blog-building.html" class="list-group-item-lay pjaxlink">blog building</a>
+                  <a href="/2015/09/09/blog-building.html" class="list-group-item-lay pjaxlink">ubuntu 14.04使用github pages和jekyll搭建静态博客</a>
                 
               </div>
             </div>
@@ -70,15 +72,6 @@
             <div class="tab-pane" id="随想">
               <div class="list-group">
                 <!--<h2 class="center">随想</h2>-->     <!--原来aside2上面的大标题-->
-                
-                  <a href="/2015/09/09/test.html" class="list-group-item-lay pjaxlink">test</a>
-                
-              </div>
-            </div>
-           
-            <div class="tab-pane" id="生活">
-              <div class="list-group">
-                <!--<h2 class="center">生活</h2>-->     <!--原来aside2上面的大标题-->
                 
                   <a href="/2015/09/09/test.html" class="list-group-item-lay pjaxlink">test</a>
                 
@@ -93,10 +86,75 @@
                 
               </div>
             </div>
+           
+            <div class="tab-pane" id="生活">
+              <div class="list-group">
+                <!--<h2 class="center">生活</h2>-->     <!--原来aside2上面的大标题-->
+                
+                  <a href="/2015/09/09/test.html" class="list-group-item-lay pjaxlink">test</a>
+                
+              </div>
+            </div>
                 
           <div class="tab-pane" id="tags">
             <div class="panel-group" id="accordion">
               <!--<h2 class="center">标签</h2>-->
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#github">github</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="github" class="panel-collapse collapse">
+                    
+                      <a  href='/2015/09/09/verify-blog-domain.html' class="list-group-item pjaxlink">
+                        github pages 绑定新网申请的域名
+                      </a>
+                    
+                      <a  href='/2015/09/09/blog-building.html' class="list-group-item pjaxlink">
+                        ubuntu 14.04使用github pages和jekyll搭建静态博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#jekyll">jekyll</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="jekyll" class="panel-collapse collapse">
+                    
+                      <a  href='/2015/09/09/verify-blog-domain.html' class="list-group-item pjaxlink">
+                        github pages 绑定新网申请的域名
+                      </a>
+                    
+                      <a  href='/2015/09/09/blog-building.html' class="list-group-item pjaxlink">
+                        ubuntu 14.04使用github pages和jekyll搭建静态博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#markdown">markdown</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="markdown" class="panel-collapse collapse">
+                    
+                      <a  href='/2015/09/09/markdown.html' class="list-group-item pjaxlink">
+                        markdown基本语法
+                      </a>
+                    
+                  </div>
+                </div>
               
             </div>
           </div>
@@ -119,8 +177,8 @@
     <div id="content">
       <h3>1. 标题设置（让字体变大，和word的标题意思一样）</h3>
 
-<p>在Markdown当中设置标题，有两种方式：
-- <em>第一种：</em>通过在文字下方添加“=”和“-”，他们分别表示一级标题和二级标题。
+<p>在Markdown当中设置标题，有两种方式：<br>
+- <em>第一种：</em>通过在文字下方添加“=”和“-”，他们分别表示一级标题和二级标题。<br>
 - <em>第二种：</em>在文字开头加上 “#”，通过“#”数量表示几级标题。（一共只有1~6级标题，1级标题字体最大）</p>
 
 <h3>2. 块注释（blockquote）</h3>
@@ -177,15 +235,15 @@ I get 10 times more traffic from <a href="http://google.com/" title="Google">Goo
 <h3>10. 图片（Images）</h3>
 
 <p>图片的处理方式和链接的处理方式，非常的类似。
--内联方式：<img src="/public/img/scenery.jpg" alt="alt text" title="Title">
+-内联方式：<img src="/public/img/scenery.jpg" alt="alt text" title="Title"><br>
 -引用方式：
-<img src="/path/to/img.jpg" alt="alt text" title="Title"> </p>
+<img src="/public/img/scenery.jpg" alt="alt text" title="Title"> </p>
 
 <h3>11. 代码（HTML中所谓的Code）</h3>
 
 <p>实现方式有两种：
--第一种：-简单文字出现一个代码框。使用<code>&lt;blockquote&gt;</code>。（<code>不是单引号而是左上角的ESC下面~中的</code>）<br>
--第二种：-大片文字需要实现代码框。使用Tab或四个空格。</p>
+- <em>第一种：</em>-简单文字出现一个代码框。使用`，<code>&lt;blockquote&gt;</code>。（`不是单引号而是左上角的ESC下面~中的`）<br>
+- <em>第二种：</em>-大片文字需要实现代码框。使用Tab或四个空格。</p>
 
 <h3>12. 脚注（footnote）</h3>
 

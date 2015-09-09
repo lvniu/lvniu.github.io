@@ -11,6 +11,8 @@
 
 
 
+  /2015/09/09/verify-blog-domain.html
+
   /2015/09/09/test.html
 
   /2015/09/09/test.html

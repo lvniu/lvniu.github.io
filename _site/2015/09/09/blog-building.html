@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-<title>blog building | Evan的博客</title>
+<title>ubuntu 14.04使用github pages和jekyll搭建静态博客 | Evan的博客</title>
 <meta name="author" content="Evan">
 
 
@@ -31,9 +31,9 @@
              <!-- 这里是aside1的读书、生活、科研、技术、绘画-->
          <li><a href="#随想" data-toggle="tab">随想</a></li>
              <!-- 这里是aside1的读书、生活、科研、技术、绘画-->
-         <li><a href="#生活" data-toggle="tab">生活</a></li>
-             <!-- 这里是aside1的读书、生活、科研、技术、绘画-->
          <li><a href="#阅读" data-toggle="tab">阅读</a></li>
+             <!-- 这里是aside1的读书、生活、科研、技术、绘画-->
+         <li><a href="#生活" data-toggle="tab">生活</a></li>
         
         <li><a href="#tags" data-toggle="tab">标签</a></li>  
         <li><a class="pjaxlink" href="/pages/archive.html">归档</a></li>
@@ -60,9 +60,11 @@
               <div class="list-group">
                 <!--<h2 class="center">技术</h2>-->     <!--原来aside2上面的大标题-->
                 
+                  <a href="/2015/09/09/verify-blog-domain.html" class="list-group-item-lay pjaxlink">github pages 绑定新网申请的域名</a>
+                
                   <a href="/2015/09/09/markdown.html" class="list-group-item-lay pjaxlink">markdown基本语法</a>
                 
-                  <a href="/2015/09/09/blog-building.html" class="list-group-item-lay pjaxlink">blog building</a>
+                  <a href="/2015/09/09/blog-building.html" class="list-group-item-lay pjaxlink">ubuntu 14.04使用github pages和jekyll搭建静态博客</a>
                 
               </div>
             </div>
@@ -70,15 +72,6 @@
             <div class="tab-pane" id="随想">
               <div class="list-group">
                 <!--<h2 class="center">随想</h2>-->     <!--原来aside2上面的大标题-->
-                
-                  <a href="/2015/09/09/test.html" class="list-group-item-lay pjaxlink">test</a>
-                
-              </div>
-            </div>
-           
-            <div class="tab-pane" id="生活">
-              <div class="list-group">
-                <!--<h2 class="center">生活</h2>-->     <!--原来aside2上面的大标题-->
                 
                   <a href="/2015/09/09/test.html" class="list-group-item-lay pjaxlink">test</a>
                 
@@ -93,10 +86,75 @@
                 
               </div>
             </div>
+           
+            <div class="tab-pane" id="生活">
+              <div class="list-group">
+                <!--<h2 class="center">生活</h2>-->     <!--原来aside2上面的大标题-->
+                
+                  <a href="/2015/09/09/test.html" class="list-group-item-lay pjaxlink">test</a>
+                
+              </div>
+            </div>
                 
           <div class="tab-pane" id="tags">
             <div class="panel-group" id="accordion">
               <!--<h2 class="center">标签</h2>-->
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#github">github</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="github" class="panel-collapse collapse">
+                    
+                      <a  href='/2015/09/09/verify-blog-domain.html' class="list-group-item pjaxlink">
+                        github pages 绑定新网申请的域名
+                      </a>
+                    
+                      <a  href='/2015/09/09/blog-building.html' class="list-group-item pjaxlink">
+                        ubuntu 14.04使用github pages和jekyll搭建静态博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#jekyll">jekyll</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="jekyll" class="panel-collapse collapse">
+                    
+                      <a  href='/2015/09/09/verify-blog-domain.html' class="list-group-item pjaxlink">
+                        github pages 绑定新网申请的域名
+                      </a>
+                    
+                      <a  href='/2015/09/09/blog-building.html' class="list-group-item pjaxlink">
+                        ubuntu 14.04使用github pages和jekyll搭建静态博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#markdown">markdown</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="markdown" class="panel-collapse collapse">
+                    
+                      <a  href='/2015/09/09/markdown.html' class="list-group-item pjaxlink">
+                        markdown基本语法
+                      </a>
+                    
+                  </div>
+                </div>
               
             </div>
           </div>
@@ -111,13 +169,61 @@
             <div class="row">
   <div class="col-md-13 aside3-title">
     <br>
-    <h2 id="#identifier">blog building</h2>
+    <h2 id="#identifier">ubuntu 14.04使用github pages和jekyll搭建静态博客</h2>
     2015年09月09日
   </div>
   <div class="col-md-13 aside3-content">
     <hr>
     <div id="content">
-      
+      <h3>1. 环境配置</h3>
+
+<h4>1.1 安装ruby</h4>
+
+<ul>
+<li><code>$sudo apt-get install ruby1.9.1-full</code><br></li>
+</ul>
+
+<p>安装完成后，在终端输入<code>ruby -v</code>,查看是否安装成功。    </p>
+
+<h4>1.2 安装nodejs</h4>
+
+<p>安装ruby时，会同时安装上gem。然而，使用命令<code>gem -v</code>,却提示一下内容      </p>
+
+<ul>
+<li><code>var/lib/gems/1.9.1/gems/execjs-2.5.2/lib/execjs/runtimes.rb:48:in &#39;autodetect&#39;: Could not find a JavaScript runtime. See https://github.com/rails/execjs for a list of available runtimes. (ExecJS::RuntimeUnavailable)</code><br></li>
+</ul>
+
+<p>这是因为，ruby的gem管理需要nodejs的支持，所以需要安装nodejs。  </p>
+
+<ul>
+<li><code>$sudo apt-get install nodejs</code><br></li>
+</ul>
+
+<h4>1.3 安装jekyll</h4>
+
+<ul>
+<li><code>$sudo gem install jekyll</code><br></li>
+</ul>
+
+<p>如果报错，请安装ruby1.9.1的扩展组件的头文件。<br>
+- <code>$sudo apt-get install ruby1.9.1-dev</code>    </p>
+
+<p>安装完成后，就可以在终端使用jekyll命令创建博客了。<br>
+- <code>$jekyll new myblog</code>   </p>
+
+<h4>1.4 git安装</h4>
+
+<ul>
+<li><code>$sudo apt-get install git</code><br></li>
+</ul>
+
+<p>在终端输入<code>git -version</code>，出现git版本信息，说明安装成功。   </p>
+
+<h3>2. github上创建repository</h3>
+
+<p>在github上创建新的仓库，仓库名称为：<em>username.github.io</em><br>
+具体操作<a href="https://pages.github.com/">请查看</a>   </p>
+
     </div>
     <hr>
     <div id="disqus_thread">
