@@ -5,6 +5,7 @@ published: true
 
 
 
+
 vim是一款强大的编辑工具，但是需要自己添加相应的plugin。下面我介绍一下我的vim配置。
 ###1. vim中实现c++头文件和源文件切换
 - 首先，下载文件a.vim，[下载地址](http://www.vim.org/scripts/script.php?script_id=31)；
@@ -49,10 +50,37 @@ vim是一款强大的编辑工具，但是需要自己添加相应的plugin。�
 
 - 2）在.vimrc配置文件中配置：
 		set tags=/home/username/leveldb/tags
-至此，ctags已经配置完成，你现在可以在工程中的不同文件中跳转了，例如使用Ctrl + ]跳转到变量或函数的定义位置，使用Ctrl + T从变量或函数的定义处返回。
+至此，ctags已经配置完成，你现在可以在工程中的不同文件中跳转了，例如使用Ctrl + ]跳转到变量或函数的定义位置，使用Ctrl + T从变量或函数的定义处返回。   
+###3. vim中配置自动补全功能   
+首先确定你的ctags已安装。然后在~/.vimrc配置文件中添加如下两行命令：
+			filetype plugin indent on   
+			set completeopt=longest,menu   
+此时就可以利用快捷方式进行自动补全了，各类补全快捷方式如下：   
 
 
 
+| 命令   |补全方式           |
+| ------- |:---------------:|
+| Ctrl+X Ctrl+L  | 整行补全 |
+| Ctrl+X Ctrl+N | 根据当前文件里关键字补全      |
+| Ctrl+X Ctrl+K | 根据字典补全      |
+| Ctrl+X Ctrl+T | 根据同义词字典补全      |
+| Ctrl+X Ctrl+I | 根据头文件内关键字补全 |
+| Ctrl+X Ctrl+] | 根据标签补全      |
+| Ctrl+X Ctrl+F | 补全文件名     |
+| Ctrl+X Ctrl+D | 补全宏定义      |
+| Ctrl+X Ctrl+V | 补全vim命令      |
+| Ctrl+X Ctrl+U | 用户自定义补全方式    |
+| Ctrl+X Ctrl+S | 拼写建议     |
 
 
+其他快捷键：   
+
+
+| 命令   |补全方式           |
+| ------- |:---------------:|
+| Ctrl+P  | 向前切换成员 |
+| Ctrl+N | 向后切换成员      |
+| Ctrl+E | 表示退出下拉窗口, 并退回到原来录入的文字      |
+| Ctrl+Y | 表示退出下拉窗口, 并接受当前选项      |
 
