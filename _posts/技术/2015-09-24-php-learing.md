@@ -2,8 +2,8 @@
 layout: post
 title: "php学习笔记"
 description: ""
-category: "php" 
-tags: "技术" 
+category: "技术" 
+tags: "php" 
 ---
 
 
