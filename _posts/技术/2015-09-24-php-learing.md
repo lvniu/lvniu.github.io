@@ -38,7 +38,7 @@ PHP 同时在名为 $GLOBALS[index] 的数组中存储了所有的全局变量�
 如需设置常量，请使用 define() 函数 - 它使用三个参数：    
 - 首个参数定义常量的名称    
 - 第二个参数定义常量的值    
-- 可选的第三个参数规定常量名是否对大小写敏感。默认是 false(对大小写敏感的常量),如果修改为true（对大小写不敏感的常量）。      
+- 可选的第三个参数规定常量名是否对大小写敏感。默认是 false(对大小写敏感的常量),如果修改为true（对大小写不敏感的常量）。        
 		define("TEST", "test");   
 		echo TEST."\n"; 
 
@@ -126,7 +126,7 @@ PHP 同时在名为 $GLOBALS[index] 的数组中存储了所有的全局变量�
 		
 		
 结果：    
-		My name is xiaoming
+		My name is xiaoming     
 		My name is wangwu
 
 
@@ -139,7 +139,7 @@ PHP 同时在名为 $GLOBALS[index] 的数组中存储了所有的全局变量�
 
 
 
-*注释：* 如果在运行该函数时两个或多个键相同，则最后的元素会覆盖其他元素    
+*注释：* 如果在运行该函数时两个或多个键相同，则最后的元素会覆盖其他元素       
 		$app = array("a" => "t4", "a" => "t5", "b" => "t6");
 		echo $app;
 
@@ -157,16 +157,19 @@ PHP 同时在名为 $GLOBALS[index] 的数组中存储了所有的全局变量�
 
 ### 11、php超全局变量   
 PHP 中的许多预定义变量都是“超全局的”，这意味着它们在一个脚本的全部作用域中都可用。在函数或方法中无需执行 global $variable; 就可以访问它们。        
-这些超全局变量是(9个)：      
-- $GLOBALS
-- $_SERVER
-- $_REQUEST
-- $_POST
-- $_GET
-- $_FILES
-- $_ENV
-- $_COOKIE
-- $_SESSION
+这些超全局变量是(9个)：         
+
+
+
+- $GLOBALS     
+- $_SERVER    
+- $_REQUEST     
+- $_POST     
+- $_GET    
+- $_FILES     
+- $_ENV    
+- $_COOKIE     
+- $_SESSION     
 
 
 
@@ -179,20 +182,23 @@ post：通过 POST 方法从表单发送的信息对其他人是不可见的（�
 - （通过 PHP trim() 函数）去除用户输入数据中不必要的字符（多余的空格、制表符、换行）     
 - （通过 PHP stripslashes() 函数）删除用户输入数据中的反斜杠（\）    
 新创建一个php文件：index.php，可以添加验证函数，实现相关变量的验证，如下：   
-	<! DCOTYPE HTML>
-	<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
-		<style>
-			.error {color: #FF0000;}
-		</style>
-	<body>
-		<?php
-			//定义变量并设置为空值
-			$nameErr = $emailErr = $genderErr = "";
-			$name = $email = $gender = "";
-			if($_SERVER["REQUEST_METHOD"] == "POST"){
-				if(empty($_POST["name"])){
+	
+
+
+		<! DCOTYPE HTML>
+		<html>
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+			<style>
+				.error {color: #FF0000;}
+			</style>
+		<body>
+			<?php
+				//定义变量并设置为空值
+				$nameErr = $emailErr = $genderErr = "";
+				$name = $email = $gender = "";
+				if($_SERVER["REQUEST_METHOD"] == "POST"){
+					if(empty($_POST["name"])){
 			      $nameErr = "姓名是必填的";
 			  }
 			  else{
