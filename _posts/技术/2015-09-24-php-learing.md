@@ -152,3 +152,118 @@ PHP 同时在名为 $GLOBALS[index] 的数组中存储了所有的全局变量�
 			  ["b"]=>
 					  string(2) "t6"
 		}
+
+
+
+### 11、php超全局变量   
+PHP 中的许多预定义变量都是“超全局的”，这意味着它们在一个脚本的全部作用域中都可用。在函数或方法中无需执行 global $variable; 就可以访问它们。        
+这些超全局变量是(9个)：      
+- $GLOBALS
+- $_SERVER
+- $_REQUEST
+- $_POST
+- $_GET
+- $_FILES
+- $_ENV
+- $_COOKIE
+- $_SESSION
+
+
+
+
+### 12、表单处理：get和post      
+get：通过 GET 方法从表单发送的信息对任何人都是可见的（所有变量名和值都显示在 URL 中）。GET 对所发送信息的数量也有限制。限制在大于 2000 个字符。不过，由于变量显示在 URL 中，把页面添加到书签中也更为方便。      
+post：通过 POST 方法从表单发送的信息对其他人是不可见的（所有名称/值会被嵌入 HTTP 请求的主体中），并且对所发送信息的数量也无限制。此外 POST 支持高阶功能，比如在向服务器上传文件时进行 multi-part 二进制输入。不过，由于变量未显示在 URL 中，也就无法将页面添加到书签。      
+使用 htmlspecialchars() 对前端的一些敏感信息进行处理。    
+在用户提交该表单时，我们还要做两件事：     
+- （通过 PHP trim() 函数）去除用户输入数据中不必要的字符（多余的空格、制表符、换行）     
+- （通过 PHP stripslashes() 函数）删除用户输入数据中的反斜杠（\）    
+新创建一个php文件：index.php，可以添加验证函数，实现相关变量的验证，如下：   
+	<! DCOTYPE HTML>
+	<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+		<style>
+			.error {color: #FF0000;}
+		</style>
+	<body>
+		<?php
+			//定义变量并设置为空值
+			$nameErr = $emailErr = $genderErr = "";
+			$name = $email = $gender = "";
+			if($_SERVER["REQUEST_METHOD"] == "POST"){
+				if(empty($_POST["name"])){
+			      $nameErr = "姓名是必填的";
+			  }
+			  else{
+			      $name = test_input($_POST["name"]);
+			      if(!preg_match("/^[a-zA-Z]*$/", $name)){
+			         $nameErr = "只允许字母和空格";
+			      }
+			  }
+			  if(empty($POST["email"])){
+			      $emailErr = "邮箱是必填的";
+			  }
+			  else{
+			      $email = test_input($_POST["email"]);
+			      if(!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email)){
+			         $emailErr = "无效的email格式";
+			      }
+			  }
+			  if(empty($_POST["gender"])){
+			      $genderErr = "性别是必选的";
+			  }
+			  else{
+			      $gender = test_input($_POST["gender"]);
+			  }
+												    
+			}
+
+			function test_input($data){
+				$data = trim($data);
+			  $data = stripslashes($data);
+			  $data = htmlspecialchars($data);
+			  return $data;
+			}
+		?>
+
+		<h2>php 验证实例</h2>
+		<p><span class = "error">* 必填字段</span></p>
+		<form method = "post" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+   		 姓名：<input type = "text" name = "name">
+		   <span class = "error">* <?php echo $nameErr; ?></span>
+		   <br><br>
+		   邮箱：<input type = "text" name = "email">
+		   <span class = "error">* <?php echo $emailErr; ?></span>
+		   <br><br>
+		   评论：<textarea name = "comment" rows = "5" cols = "40"></textarea>
+		   <br><br>
+		   性别：
+		   <input type = "radio" name = "gender" value = "female">女
+		   <input type = "radio" name = "gender" value = "male">男
+		   <span class = "error">* <?php echo $genderErr; ?> </span>
+		   <br><br>
+		   <input type = "submit" name = "submit" value = "提交">
+		</form>
+
+		<?php
+			echo "<h2>您的输入：</h2>";
+			echo $name;
+			echo "<br>";
+			echo $email;
+			echo "<br>";
+			echo $gender;
+		?>
+</body>
+</head>
+</html>
+
+### 13、include和require      
+include 和 require 语句是相同的，除了错误处理方面：     
+- require 会生成致命错误（E_COMPILE_ERROR）并停止脚本    
+- include 只生成警告（E_WARNING），并且脚本会继续    
+*注释：*     
+- 请在此时使用 require：当文件被应用程序请求时。     
+- 请在此时使用 include：当文件不是必需的，且应用程序在文件未找到时应该继续运行时。   
+
+
