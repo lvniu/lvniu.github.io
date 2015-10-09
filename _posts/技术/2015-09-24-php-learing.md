@@ -273,3 +273,135 @@ include 和 require 语句是相同的，除了错误处理方面：
 - 请在此时使用 include：当文件不是必需的，且应用程序在文件未找到时应该继续运行时。   
 
 
+### 14、文件操作     
+fopen(), fread(), fclose()。     
+例如：     
+		<?php
+			$myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+			echo fread($myfile,filesize("webdictionary.txt"));
+			fclose($myfile);
+		?>     
+
+
+
+PHP 检查 End-Of-File - feof()    
+-   feof() 函数检查是否已到达 "end-of-file" (EOF)。    
+-   feof() 对于遍历未知长度的数据很有用。    
+
+
+
+其他文件操作函数，请查看：http://www.w3school.com.cn/php/php_ref_filesystem.asp   
+
+
+
+### 15、cookie和session用法    
+cookie：
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />       
+		<?php    
+		if($_GET['out'])    
+			{   //用于注销cookies     
+		    setcookie('id',"");    
+		    setcookie('pass',"");     
+		    echo "<script>location.href='login.php'</script>"; //因为cookies不是及时生效的，只有你再次刷新时才生效，所以，注销后让页面自动刷新。      
+			}      
+
+		if($_POST['name']&&$_POST['password']) //如果变量用户名和密码存在时，在下面设置cookies     
+			{   //用于设置cookies     
+		    setcookie('id',$_POST['name'],time()+3600);     
+		    setcookie('pass',$_POST['password'],time()+3600);     
+		    echo "<script>location.href='login.php'</script>"; //让cookies及时生效    
+								   
+			}    
+		if($_COOKIE['id']&&$_COOKIE['pass'])     
+			{   //cookies设置成功后，用于显示cookies     
+		    echo "登录成功！<br />用户名：".$_COOKIE['id']."<br/>密码：".$_COOKIE['pass'];      
+		    echo "<br />";      
+		    echo "<a href='login.php?out=out'>注销cookies</a>";  //双引号内，如果再有引号，需要用单引号。     
+			}     
+		?>      
+		<form action="" method="post">     
+		用户ID：    
+		<input type="text" name="name" /><br/><br/>    
+		密码：    
+		<input type="password" name="password" /><br/><br />
+		<input type="submit" name="submit">
+		</form>
+
+
+
+session用法：    
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' /> 
+		<?php
+		//session用法实例
+		session_start();//启动session，必须放在第一句，否则会出错。
+		if($_GET['out'])
+		{
+		    unset($_SESSION['id']);
+				unset($_SESSION['pass']);
+		}
+
+		if($_POST['name']&&$_POST['password'])
+		{   
+		   //用于设置session
+		    $_SESSION['id']=$_POST['name'];
+		    $_SESSION['pass']=$_POST['password'];
+		}
+
+		if($_SESSION['id']&&$_SESSION['pass'])
+		{
+		    echo "登录成功！<br/>用户ID：".$_SESSION['id']."<br />用户密码：".$_SESSION['pass'];
+		    echo "<br />";
+		    echo "<a href='login.php?out=out'>注销session</a>";
+		}
+
+		?>
+		<form action="login.php"  method="post">
+		用户ID：
+		<input type="text" name="name" /><br/><br/>
+		密码：
+		<input type="password" name="password" /><br/><br />
+		<input type="submit" name="submit">
+		</form>
+
+
+
+### 16、php过滤器函数和过滤器    
+过滤器函数：    
+- filter_var() - 通过一个指定的过滤器来过滤单一的变量    
+- filter_var_array() - 通过相同的或不同的过滤器来过滤多个变量    
+- filter_input - 获取一个输入变量，并对它进行过滤    
+- filter_input_array - 获取多个输入变量，并通过相同的或不同的过滤器对它们进行过滤     
+具体请查看：http://www.w3school.com.cn/php/php_filter.asp    
+
+Validating 过滤器：     
+- 用于验证用户输入    
+- 严格的格式规则（比如 URL 或 E-Mail 验证）    
+- 如果成功则返回预期的类型，如果失败则返回 FALSE    
+Sanitizing 过滤器：    
+- 用于允许或禁止字符串中指定的字符    
+- 无数据格式规则    
+- 始终返回字符串     
+
+
+
+### 17、php中的xml解析器    
+xml Expat Parser--基于事件的解析器
+xml DOM--基于树的解析器
+xml SimpleXML--是一种取得元素属性和文本的便利途径
+
+### 18、AJAX
+- AJAX实现下拉列表   
+[请查看](http://www.w3school.com.cn/php/php_ajax_xml.asp)   
+- 读取数据库内容   
+[请查看](http://www.w3school.com.cn/php/php_ajax_database.aspi)   
+- 把读取的数据库内容保存为xml格式    
+[请查看](http://www.w3school.com.cn/php/php_ajax_responsexml.asp)   
+- 实时检索    
+[请查看](http://www.w3school.com.cn/php/php_ajax_livesearch.asp)    
+- 实现RSS阅读工具   
+[请查看](http://www.w3school.com.cn/php/php_ajax_rss_reader.asp)    
+- 实现选票系统    
+[请查看](http://www.w3school.com.cn/php/php_ajax_poll.asp)   
+
+
+
