@@ -56,8 +56,10 @@ fast-cgi启动时，主要是解析相应版本php，如果安装多个版本的
 ### 6、配置nginx    
 到此为止，nginx和fast-cgi已经基本安装完成。但是还不能解析php，还需要配置nginx。nginx配置文件在/usr/local/nginx/conf目录下的nginx.conf。        
 
-首先，修改服务端口。如果服务器上同时安装有apache，则需要注意端口不要重复，我这里把端口修改为了8089。在location中添加php的入口，即index.php。然后，打开fastcgi的监听端口，即第二个location。特别要注意。服务路径root要修改为自己的服务路径。
-fastcgi_param中的变量$fastcgi_script_name要跟root的服务路径相同。     
+首先，修改服务端口。如果服务器上同时安装有apache，则需要注意端口不要重复，我这里把端口修改为了8089。在location中添加php的入口，即index.php。然后，打开fastcgi的监听端口，即第二个location。特别要注意。服务路径root要修改为自己的服务路径。fastcgi_param中的变量$fastcgi_script_name要跟root的服务路径相同。     
+
+
+
 		server {
 				listen       8089;
 				server_name  localhost;
