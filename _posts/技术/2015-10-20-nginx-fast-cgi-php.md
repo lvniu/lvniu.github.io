@@ -48,7 +48,10 @@ nginx下载地址：http://nginx.org/en/download.html
 
 
 ### 5、fast-cgi启动    
-fast-cgi启动时，主要是解析相应版本php，如果安装多个版本的php，需要选择特定版本下的php-cgi文件，完成fast-cgi的启动。   
+fast-cgi启动时，主要是解析相应版本php，如果安装多个版本的php，需要选择特定版本下的php-cgi文件，完成fast-cgi的启动。       
+
+
+
 		$spawn-fcgi -a 127.0.0.1 -p 9000 -C 10 -u www-data -f /usr/local/php/bin/php-cgi    
 
 
@@ -70,7 +73,6 @@ fast-cgi启动时，主要是解析相应版本php，如果安装多个版本的
         location ~ \.php$ {
             root           /usr/local/nginx/html;
             fastcgi_pass   127.0.0.1:9000;
-            #fastcgi_pass   182.92.4.218:8089;
             fastcgi_index  index.php;
             fastcgi_param  SCRIPT_FILENAME  /usr/local/nginx/html/$fastcgi_script_name;
 						include        fastcgi_params;
