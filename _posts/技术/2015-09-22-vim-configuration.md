@@ -37,7 +37,23 @@ vim是一款强大的编辑工具，但是需要自己添加相应的plugin。�
 		$ make
 		# make install   
 现在就可以在你的工程目录下运行命令：
-		`ctags -R`
+		`ctags -R`     
+
+
+如果出现工程包含js文件，会出现如下情况：        
+		ctags: Warning: ignoring null tag in ………….js     
+
+
+这种错误，据说是因为“js文件内有特殊结构，不在CTags默认定义列表中”，有两种方法：       
+- 将项目中的js文件全部移出去，等生成那两个文件之后再移回来。       
+- ctags可以指定生成.tags文件时，只过滤哪种语言的文件，下面的命令是只过滤php文件
+cmd切换到项目文件目录，执行：      
+
+
+		ctags --languages=php  -R      
+
+
+
 例如，我的工程目录是：/home/username/leveldb   
 		  $ cd /home/username/leveldb
       	$ ctags -R
