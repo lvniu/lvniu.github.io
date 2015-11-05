@@ -403,5 +403,40 @@ xml SimpleXML--是一种取得元素属性和文本的便利途径
 - 实现选票系统    
 [请查看](http://www.w3school.com.cn/php/php_ajax_poll.asp)   
 
+### 19、php链接数据库
+查询mysql数据，并以excel形式展示。一开始，我总想着直接导出excel，后来发现，还是比较麻烦的，不适合实时开发使用，可以先导出txt，然后再复制到excel。这里就需要注意，需要对读取的数据进行空格和换行操作，这样才能保证复制到excel里面的数据是规格化的，行列分明。    
+
+
+多的不说了，直接上代码：     
+
+
+		<?php
+				$mysql_server_name='ip:port'; //自己的mysql数据库服务器地址和端口    
+				$mysql_username='sqlname'; //自己的mysql数据库用户名      
+				$mysql_password='123456'; //自己的mysql数据库密码      
+				$mysql_database='databasename'; //自己的mysql数据库名      
+				$conn=mysql_connect($mysql_server_name,$mysql_username,$mysql_password) or die("error connecting") ; //连接数据库         
+				mysql_query("set names 'utf8'");        
+				mysql_select_db($mysql_database, $conn); //打开数据库       
+				ini_set('memory_limit','256M');//这是设置内存大小，防止操作的数据量过大，导致失败      
+				$problem = array();      
+				$user_id = array(123, 456, 789);     
+				foreach($user_id as $val){       
+						$sql ="select *  from user_info  where user_id=".$val." ORDER BY create_date DESC" ; //SQL语句       
+						$result = mysql_query($sql,$conn); //查询       
+						while($row = mysql_fetch_array($result, 1))       
+						{     
+								$problem[] = $row;     
+						}       
+				}      
+				mysql_close($conn);        
+				$fp = fopen('./file.txt', 'a+b');         
+				foreach($problem as $item){             
+				$str =implode("\t", $item);//对每一行的数据转换为字符串，并空格隔开                 
+				fwrite($fp,"$str");             
+				$res = fwrite($fp,"\r\n");//对不同行的数据，换行           
+        }        
+				fclose($fp);   
+		?> 
 
 
