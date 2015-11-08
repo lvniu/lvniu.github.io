@@ -540,3 +540,52 @@ PHPExcel比较强大，能够将内存中的数据输出成Excel文件，同时�
 		}              
 
 		print_r($data);           
+
+
+
+* 注意：*     
+如果出现如下错误：      
+
+
+		Fatal error: Uncaught exception 'PHPExcel_Reader_Exception' with message 'ZipArchive library is not enabled' in \htdocs\excel\Classes\PHPExcel\Reader\Excel2007.php:87      
+
+
+原因：ZipArchive library is not enabled：出现这个错误说明是程序在调用'ZipArchive' 这个类的时候没有成功，原因是由于在安装php的时候没有增加php zip的支持（非zlib）。         
+
+
+windows下解决办法：    
+请在php.ini找到extension=php_zip.dll并把前面的分号去掉(如果没有，请添加extension=php_zip.dll此行并确保php_zip.dll文件存在相应的目录)，保存后重启php即可。	         
+
+linux下解决办法：      
+php安装zip扩展            
+
+
+		# wget http://pecl.php.net/get/zip-1.10.2.tgz      
+		# tar zxvf zip-1.10.2.tgz         
+		# cd zip-1.10.2          
+		# /usr/local/php/bin/phpize          
+
+
+运行了这个zip目录下会自动生成几个文件，其中包括configure        
+
+
+		# ./configure --with-php-config=/usr/local/php/bin/php-config     
+		# make          
+		# make install           
+
+
+安装完成后修改一下php.ini      
+
+
+		# vim /usr/local/php/etc/php.ini     
+
+
+加入：      
+
+
+		extension=/usr/local/php/lib/php/extensions/no-debug-non-zts-20060613/zip.so      
+
+之后重启apache。     
+
+
+
