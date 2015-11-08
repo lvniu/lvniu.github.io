@@ -87,21 +87,23 @@ PHP 同时在名为 $GLOBALS[index] 的数组中存储了所有的全局变量�
 		
 		
 结果：   
-		array(5) {
-				[0]=>
-						string(2) "t1"
-			  [1]=>
-					  string(2) "t2"
-			  [2]=>
-					  string(2) "t3"
-			  ["a"]=>
-					  string(2) "t4"
-			  ["b"]=>
-					  string(2) "t5"
-		}
-		bool(false)
-		bool(true)
-		bool(true)
+
+
+		array(5) {       
+				[0]=>           
+						string(2) "t1"           
+			  [1]=>                
+					  string(2) "t2"           
+			  [2]=>                 
+					  string(2) "t3"               
+			  ["a"]=>                    
+					  string(2) "t4"               
+			  ["b"]=>                 
+					  string(2) "t5"                  
+		}                     
+		bool(false)               
+		bool(true)               
+		bool(true)              
 
 
 
@@ -125,9 +127,11 @@ PHP 同时在名为 $GLOBALS[index] 的数组中存储了所有的全局变量�
 
 		
 		
-结果：    
+结果：     
+
+
 		My name is xiaoming     
-		My name is wangwu
+		My name is wangwu          
 
 
 
@@ -139,19 +143,23 @@ PHP 同时在名为 $GLOBALS[index] 的数组中存储了所有的全局变量�
 
 
 
-*注释：* 如果在运行该函数时两个或多个键相同，则最后的元素会覆盖其他元素       
-		$app = array("a" => "t4", "a" => "t5", "b" => "t6");
-		echo $app;
+*注释：* 如果在运行该函数时两个或多个键相同，则最后的元素会覆盖其他元素      
+
+ 
+		$app = array("a" => "t4", "a" => "t5", "b" => "t6");            
+		echo $app;             
 
 		
 		
 结果：     
-		array(2) {
-				["a"]=>
-						string(2) "t5"
-			  ["b"]=>
-					  string(2) "t6"
-		}
+
+
+		array(2) {       
+				["a"]=>            
+						string(2) "t5"        
+			  ["b"]=>             
+					  string(2) "t6"           
+		}            
 
 
 
@@ -276,11 +284,13 @@ include 和 require 语句是相同的，除了错误处理方面：
 ### 14、文件操作     
 fopen(), fread(), fclose()。     
 例如：     
-		<?php
-			$myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
-			echo fread($myfile,filesize("webdictionary.txt"));
-			fclose($myfile);
-		?>     
+
+
+		<?php           
+			$myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");                
+			echo fread($myfile,filesize("webdictionary.txt"));            
+			fclose($myfile);             
+		?>           
 
 
 
@@ -295,27 +305,29 @@ PHP 检查 End-Of-File - feof()
 
 
 ### 15、cookie和session用法    
-cookie：
-		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />       
-		<?php    
-		if($_GET['out'])    
-			{   //用于注销cookies     
-		    setcookie('id',"");    
-		    setcookie('pass',"");     
-		    echo "<script>location.href='login.php'</script>"; //因为cookies不是及时生效的，只有你再次刷新时才生效，所以，注销后让页面自动刷新。      
-			}      
+cookie：   
 
-		if($_POST['name']&&$_POST['password']) //如果变量用户名和密码存在时，在下面设置cookies     
-			{   //用于设置cookies     
-		    setcookie('id',$_POST['name'],time()+3600);     
-		    setcookie('pass',$_POST['password'],time()+3600);     
-		    echo "<script>location.href='login.php'</script>"; //让cookies及时生效    
-								   
-			}    
-		if($_COOKIE['id']&&$_COOKIE['pass'])     
-			{   //cookies设置成功后，用于显示cookies     
-		    echo "登录成功！<br />用户名：".$_COOKIE['id']."<br/>密码：".$_COOKIE['pass'];      
-		    echo "<br />";      
+
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />                          
+		<?php                
+		if($_GET['out'])              
+			{   //用于注销cookies                  
+		    setcookie('id',"");               
+		    setcookie('pass',"");               
+		    echo "<script>location.href='login.php'</script>"; //因为cookies不是及时生效的，只有你再次刷新时才生效，所以，注销后让页面自动刷新。            
+			}             
+
+		if($_POST['name']&&$_POST['password']) //如果变量用户名和密码存在时，在下面设置cookies               
+			{   //用于设置cookies                 
+		    setcookie('id',$_POST['name'],time()+3600);               
+		    setcookie('pass',$_POST['password'],time()+3600);             
+		    echo "<script>location.href='login.php'</script>"; //让cookies及时生效                   
+			}              
+ 
+		if($_COOKIE['id']&&$_COOKIE['pass'])             
+			{   //cookies设置成功后，用于显示cookies            
+		    echo "登录成功！<br />用户名：".$_COOKIE['id']."<br/>密码：".$_COOKIE['pass'];             
+		    echo "<br />";           
 		    echo "<a href='login.php?out=out'>注销cookies</a>";  //双引号内，如果再有引号，需要用单引号。     
 			}     
 		?>      
@@ -329,14 +341,16 @@ cookie：
 
 
 
-session用法：    
-		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' /> 
-		<?php
-		//session用法实例
-		session_start();//启动session，必须放在第一句，否则会出错。
-		if($_GET['out'])
-		{
-		    unset($_SESSION['id']);
+session用法：            
+
+
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />      
+		<?php             
+		//session用法实例                   
+		session_start();//启动session，必须放在第一句，否则会出错。           
+		if($_GET['out'])         
+		{          
+		    unset($_SESSION['id']);      
 				unset($_SESSION['pass']);
 		}
 
@@ -371,7 +385,7 @@ session用法：
 - filter_var_array() - 通过相同的或不同的过滤器来过滤多个变量    
 - filter_input - 获取一个输入变量，并对它进行过滤    
 - filter_input_array - 获取多个输入变量，并通过相同的或不同的过滤器对它们进行过滤     
-具体请查看：http://www.w3school.com.cn/php/php_filter.asp    
+[具体请查看：](http://www.w3school.com.cn/php/php_filter.asp)      
 
 Validating 过滤器：     
 - 用于验证用户输入    
@@ -440,3 +454,89 @@ xml SimpleXML--是一种取得元素属性和文本的便利途径
 		?> 
 
 
+
+### 20、利用phpExcel读取excel内容       
+读取Excel的内容，主要有两个选择，第一个是PHPExcelReader，另外一个是PHPExcel。     
+
+
+PHPExcelReader比较轻量级，仅支持Excel的读取，实际上就是一个Reader。但是可惜的是不能够支持Excel 2007的格式（.xlsx）。      
+
+
+PHPExcel比较强大，能够将内存中的数据输出成Excel文件，同时还能够对Excel做各种操作，下面主要介绍下如何使用PHPExcel进行Excel文件的读取。         
+
+
+首先下载phpExcel：[下载地址](http://download-codeplex.sec.s-msft.com/Download/Release?ProjectName=phpexcel&DownloadId=809026&FileTime=130382506283700000&Build=21031)。       
+
+
+然后，创建一个php文件，来实现读取excel的操作。我这里创建一个readExcel.php文件，文件内容如下：            
+
+
+		<?php               
+
+		require_once('./Classes/PHPExcel/IOFactory.php');//我把phpexcel解压到当前文件夹了                 
+		$file = "tongji.xlsx";     
+		$type = strtolower( pathinfo($file, PATHINFO_EXTENSION) );//因为excel中的行列都是大写字母表示的，所以要先转换为小写       
+
+		$path = './'.$file;            
+
+		if (!file_exists($path)) {              
+   		   die('no file!');         
+		}          
+
+		//根据不同类型分别操作                 
+		if( $type=='xlsx'||$type=='xls' ){               
+  		$objPHPExcel = PHPExcel_IOFactory::load($path);              
+		}               
+		else if( $type=='csv' ){             
+   		 $objReader = PHPExcel_IOFactory::createReader('CSV')          
+     		    ->setDelimiter(',')                  
+       		  ->setInputEncoding('GBK') //不设置将导致中文列内容返回boolean(false)或乱码             
+        		->setEnclosure('"')            
+        		->setLineEnding("\r\n")             
+        		->setSheetIndex(0);          
+   		 $objPHPExcel = $objReader->load($path);           
+
+		}                
+		else{                 
+   		 die('Not supported file types!');           
+		}                        
+		/*如果想循环操作不同的表        
+		$sheetCount = $objPHPExcel->getSheetCount();//获取excel文件包含的总共的表的个数               
+		//然后循环操作不同的表     	
+		for($i = 0; $i < $sheetCount; $i++)
+		{        
+				$sheet = $objPHPExcel->getSheet($i);       
+				......     
+				......    
+		}      
+		*/
+		//选择标签页                
+		$sheet = $objPHPExcel->getSheet(0);          
+
+		//获取行数与列数,注意列数需要转换                 
+		$highestRowNum = $sheet->getHighestRow();                 
+		$highestColumn = $sheet->getHighestColumn();           
+		$highestColumnNum = PHPExcel_Cell::columnIndexFromString($highestColumn);         
+
+		//取得字段，这里测试表格中的第一行为数据的字段，因此先取出用来作后面数组的键名             
+		$filed = array();                   
+		for($i=0; $i<$highestColumnNum;$i++){          
+ 	 		 $cellName = PHPExcel_Cell::stringFromColumnIndex($i).'1';       
+  		 $cellVal = $sheet->getCell($cellName)->getValue();//取得列内容     
+  		 $filed []= $cellVal;               
+	 	}               
+ 
+		 //开始取出数据并存入数组               
+		$data = array();                 
+		for($i=2;$i<=$highestRowNum;$i++){                   
+   		    //ignore row 1                      
+     		  $row = array();          
+       		for($j=0; $j<$highestColumnNum;$j++){           
+         		    $cellName = PHPExcel_Cell::stringFromColumnIndex($j).$i;             
+           		  $cellVal = $sheet->getCell($cellName)->getValue();          
+             		$row[ $filed[$j] ] = $cellVal;                       
+       		}                 
+       		$data []= $row;              
+		}              
+
+		print_r($data);           
