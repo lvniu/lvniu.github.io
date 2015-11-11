@@ -84,4 +84,39 @@ crontab中的每一行代表一个定期执行的任务，分为6个部分。前
 - 0 * * * *                    # 每小时的0点执行一次任务，比如6:00，10:00                
 - 6,10 * 2 * *                 # 每个月2号，每小时的6分和10分执行一次任务                       
 - \*/3,*/5 * * * *             # 每隔3分钟或5分钟执行一次任务，比如10:03，10:05，10:06                 
- 
+
+
+
+### 3、开启日志功能            
+1) 修改配置文件：/etc/rsyslog.d/50-default.conf                 
+
+
+
+		vim /etc/rsyslog.d/50-default.conf    
+
+
+在配置文件中，把              
+
+
+		#cron.*       /var/log/cron.log                
+
+
+前面的注释#号去掉就OK了。       
+
+
+2) 重启rsyslog服务             
+
+
+		service rsyslog restart           
+
+
+3) 再次查看cron日志              
+
+
+		ls /var/log/cron.log           
+
+
+备注：这里就有了 crontab  日志。    
+
+
+
