@@ -71,7 +71,7 @@ jobs -l选项可显示所有任务的PID，jobs的状态可以是running, stoppe
 - 直接在命令行键入screen命令         
 
 
-# screen              
+		# screen              
 
 
 Screen将创建一个执行shell的全屏窗口。你可以执行任意shell程序，就像在ssh窗口中那样。在该窗口中键入exit退出该窗口，如果这是该screen会话的唯一窗口，该screen会话退出，否则screen自动切换到前一个窗口。               
