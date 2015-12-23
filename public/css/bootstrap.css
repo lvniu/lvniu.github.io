@@ -3980,7 +3980,7 @@ select[multiple].input-group-sm>.input-group-addon, select[multiple].input-group
 }
 
 .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
-    background-color: #5F9F9F;
+    background-color: #777;
     border-color: #428bca
 }
 
