@@ -3969,7 +3969,7 @@ select[multiple].input-group-sm>.input-group-addon, select[multiple].input-group
 }
 
 .nav>li.disabled>a {
-    color: #5F9F9F
+    color: #777
 }
 
 .nav>li.disabled>a:hover, .nav>li.disabled>a:focus {
@@ -3980,7 +3980,7 @@ select[multiple].input-group-sm>.input-group-addon, select[multiple].input-group
 }
 
 .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
-    background-color: #eee;
+    background-color: #5F9F9F;
     border-color: #428bca
 }
 
