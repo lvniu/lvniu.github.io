@@ -2,8 +2,8 @@
 layout: post
 title: "ubuntu中配置nginx和fast-cgi来解析php"
 description: ""
-category: "nginx" 
-tags: "技术" 
+category: "技术" 
+tags: "nginx" 
 ---
 
 ### 1、nginx和fast-cgi解析php模式       
