@@ -68,7 +68,7 @@ $(document).ready(function() {
   $('body').on('click', '.show-commend', function(){
     var ds_loaded = false;
     //window.disqus_shortname = $('.show-commend').attr('name');
-    window.disqus_shortname = 'painterlin';
+    window.disqus_shortname = 'fieelingtime';
     $.ajax({
       type: "GET",
       url: "http://" + disqus_shortname + ".disqus.com/embed.js",
