@@ -3969,7 +3969,7 @@ select[multiple].input-group-sm>.input-group-addon, select[multiple].input-group
 }
 
 .nav>li.disabled>a {
-    color: #777
+    color: #5F9F9F
 }
 
 .nav>li.disabled>a:hover, .nav>li.disabled>a:focus {
