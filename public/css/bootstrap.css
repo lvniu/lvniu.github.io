@@ -1123,8 +1123,7 @@ input, button, select, textarea {
 }
 
 a {
-    /*color: #428bca;*/
-    color: #DE9C53;
+    color: #428bca;
     text-decoration: none
 }
 
