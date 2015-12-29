@@ -1123,7 +1123,8 @@ input, button, select, textarea {
 }
 
 a {
-    color: #428bca;
+    /*color: #428bca;*/
+    color: #DE9C53;
     text-decoration: none
 }
 
@@ -3206,8 +3207,9 @@ textarea.input-lg, select[multiple].input-lg {
 .open>.dropdown-toggle.btn-primary {
     color: #fff;
     /*background-color: #1abc9c;*/
-    background-color: #89BEB2;
-    border-color: #1abc9c;
+    background-color: #DE9C53;
+    /*border-color: #1abc9c;*/
+    border-color: #89BEB2;
 }
 
 .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
