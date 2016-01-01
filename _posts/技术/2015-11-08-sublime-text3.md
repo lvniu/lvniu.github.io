@@ -24,7 +24,7 @@ tags: "sublime"
 替换 ： ctrl+shift+f               
 
 函数查找 ctrl+p 然后输入：@                      
-或者是 ctrl+p，选择指定函数
+或者是 ctrl+r，选择指定函数            
 跳到指定行 ctrl+p 然后输入：:行数                    
 
 跳到某个类某个方法 ctrl+p 输入 类名@函数名                         
