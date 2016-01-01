@@ -142,3 +142,8 @@ zk     向上移动到前一折叠的结束处。关闭的折叠也被计入。
 VLD(Vulcan Logic Dumper)是一个在Zend引擎中，以挂钩的方式实现的用于输出PHP脚本生成的中间代码（执行单元）的扩展。 它可以在一定程序上查看Zend引擎内部的一些实现原理，是我们学习PHP源码的必备良器。    
 具体安装方式：[请查看](http://www.jinglingshu.org/?p=8988)        
 
+
+
+### 6、vim的基本命令      
+[查看地址](http://www.cnblogs.com/softwaretesting/archive/2011/07/12/2104435.html)         
+
