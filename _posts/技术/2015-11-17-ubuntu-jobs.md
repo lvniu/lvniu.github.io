@@ -106,17 +106,4 @@ Screen创建一个执行vi test.c的单窗口会话，退出vi将退出该窗口
 
 
 
-### 9、插入go语言编辑器          
-<iframe style="border:1px solid" src="https://wide.b3log.org/playground/8b7cc38b4c12e6fde5c4d15a4f2f32e5.go?embed=true" width="99%" height="600">               
-package main             
-
-import "fmt"               
-
-func main() {                   
-	fmt.Println("Hello, 世界")                      
-}              
-
-</iframe>         
-
-
 
