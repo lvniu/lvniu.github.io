@@ -589,3 +589,14 @@ php安装zip扩展
 
 
 
+
+### 21、apidoc     
+apidoc可以根据代码注释生成web api文档，支持大部分主流语言java javascript php coffeescript erlang perl python ruby go...，相对而言，web接口的注释维护起来更加方便，不需要额外再维护一份文档。    
+apidoc从注释生成静态html网页文档，不仅支持项目版本号，还支持api版本号。     
+具体操作请查阅如下链接：     
+[apidoc官网](http://apidocjs.com/)     
+[github地址](https://github.com/apidoc/apidoc)     
+
+
+
+
