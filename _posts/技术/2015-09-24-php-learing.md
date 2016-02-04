@@ -595,7 +595,35 @@ apidoc可以根据代码注释生成web api文档，支持大部分主流语言j
 apidoc从注释生成静态html网页文档，不仅支持项目版本号，还支持api版本号。     
 具体操作请查阅如下链接：     
 [apidoc官网](http://apidocjs.com/)     
-[github地址](https://github.com/apidoc/apidoc)     
+[github地址](https://github.com/apidoc/apidoc)    
+
+
+### 22、php Function is deprecated 的解决办法                
+
+
+php升级为5.3后，程序会报 Function split() is deprecated 的错误。         
+这是因为种种原因（主要是关于正则的原因，具体见后），split这个函数在新版本不支持了。             
+在php中，再使用deprecated的函数会报错，必须改掉。（java里deprecated的函数只是给警告，还可以继续用）                
+改为什么呢？ 看第一个参数，如果第一个参数不是正则表达式，split改为 explode；如果是正则表达式，split改为preg_split。explode会比以前快很多，因为以前要考虑正则，explode不考虑正则。                 
+* POSIX → PCRE                     
+* ereg_replace() → preg_replace()            
+* ereg() → preg_match()              
+* eregi_replace() → preg_replace()        
+* eregi() → preg_match()              
+* split() → preg_split()               
+* spliti() → preg_split()                     
+* sql_regcase() → No equivalent     
+
+           
+PHP split() 替代方案                
+* 需要regex 的split, 可用preg_split() 代替           
+* 不需要regex, 只要要快速分割固定的字串, 可用explode() 代替. (速度会比需要regex 的快很多)                    
+
+
+
+
+ 
+
 
 
 
