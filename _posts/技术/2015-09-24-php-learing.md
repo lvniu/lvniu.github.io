@@ -621,6 +621,13 @@ PHP split() 替代方案
 
 
 
+### 23、php运行模式             
+[查看链接](http://www.cnblogs.com/xia520pi/p/3914964.html)      
+
+
+
+
+
 
  
 
