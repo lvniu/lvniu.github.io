@@ -36,5 +36,13 @@ tags: "sublime"
 跳转到声明： ctrl + t + t ，ctrl+> ，ctrl+shift+left_click                      
 跳转返回： ctrl + t + b ，ctrl+< ，ctrl+shift+right_click                    
 
+### 4、Sublime使用及FtpSync远程同步
 
- 
+[请查看博客](http://liuwanlin.info/sublimeshi-yong-ji-ftpsyncyuan-cheng-tong-bu/)    
+使用SFTP更牛掰，直接通过ctrl+shift+p Install Package 来查找SFTP进行安装，完成后，再进行配置host、username和password
+
+### 5、There are no packages available for installation问题解决办法
+- 打开windows控制台，输入 ping sublime.wbond.net 然后看响应ping包的IP地址是多少，我这里是 50.116.33.29
+- 然后打开系统的host文件：C:\Windows\system32\drivers\etc\，在最后添加一行：50.116.33.29 sublime.wbond.net，原理就不细讲了，这个就是域名和IP的一个映射关系。保存，关闭。
+- 重启Sublime，然后ctrl+shift+P, 输入install，就会发现可以解析到插件了。   
+[参考博客](http://blog.csdn.net/u013647382/article/details/46547291)
