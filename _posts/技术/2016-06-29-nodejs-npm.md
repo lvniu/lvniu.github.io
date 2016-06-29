@@ -12,6 +12,7 @@ tags: "nodejs"
 - nodejs安装方式很多，花费了很长时间在源码安装上，因为源码安装需要依赖其他的配置，包括gcc等。所以安装起来比较麻烦。后来发现，使用nvm安装相当方便，且能安装到自己的用户下（这一点是我比较在意的）。  
 
 - 下面来说一下安装过程，这些安装方法完全cp自[微魔部落](https://www.vmvps.com/4-ways-to-install-node-js-on-centos-7-servers.html)
+
 ####1.1 源码安装
 
 - 下载源码（官网查看最新版本链接）
@@ -38,7 +39,7 @@ tags: "nodejs"
 
 - 下载已编译版本
 
-[获取最新版本的链接](https://nodejs.org/download/)
+	[获取最新版本的链接](https://nodejs.org/download/)
 
 		cd ~
 		wget http://nodejs.org/dist/v0.10.30/node-v0.10.30-linux-x64.tar.gz
@@ -113,7 +114,7 @@ tags: "nodejs"
 
 		nvm alias default v0.10.30
 
-###2 npm常用命令
+###2. npm常用命令
 
 npm是一个node包管理和分发工具，已经成为了非官方的发布node模块（包）的标准。有了npm，可以很快的找到特定服务要使用的包，进行下载、安装以及管理已经安装的包。
 
@@ -179,7 +180,7 @@ node的安装分为全局模式和本地模式。
 
 - 更多命令请参看npm[官方文档](https://www.npmjs.org/doc/)
 
-###3 安装apidoc    
+###3. 安装apidoc    
 局部安装方式
 
 		npm install apidoc
