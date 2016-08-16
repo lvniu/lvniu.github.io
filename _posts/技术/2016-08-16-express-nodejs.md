@@ -1,4 +1,13 @@
-1. 建立工程
+---
+layout: post
+title: "express学习"
+description: ""
+category: "技术"
+tags: "nodejs express" 
+---
+
+
+###1. 建立工程   
 
  - 进入工程目录
 
