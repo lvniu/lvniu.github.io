@@ -75,6 +75,7 @@ tags: "nodejs"
 
 		curl https://raw.githubusercontent.com/creationix/nvm/v0.13.1/install.sh | bash
 		source ~/.bash_profile
+
 - 列出所需要的版本
 
 		nvm list-remote
@@ -97,22 +98,28 @@ tags: "nodejs"
 		v0.11.11
 		v0.11.12
 		v0.11.13
+		v6.3.1
 - 安装相应的版本
 
-		nvm install v0.10.30
+		nvm install v6.3.1
 - 查看已安装的版本
 
 		nvm list
 显示结果
 
-		->  v0.10.30
+		->  v6.3.1
 		      system
 - 切换版本
 
-		nvm use v0.10.30
+		nvm use v6.3.1
 - 设置默认版本
 
-		nvm alias default v0.10.30
+		nvm alias default v6.3.1
+
+- 如果提示 not find node in /usr/bin:/home/test/bin
+需要在.bash_profile文件中添加环境变量，我的nvm安装在自己的目录下，并且选择的是6.3.1版本，所以需要在.bash_profile添加如下命令：
+
+		PATH=$PATH:$HOME/.nvm/v6.3.1/bin
 
 ###2. npm常用命令
 
