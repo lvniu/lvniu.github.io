@@ -624,6 +624,13 @@ PHP split() 替代方案
 ### 23、php运行模式             
 [查看链接](http://www.cnblogs.com/xia520pi/p/3914964.html)      
 
+### 24、php-fpm下使用pcntl_fork的教训
+
+pcntl_fork是只能在cli下的，php-fpm不支持，要想做到，可以在php-fpm下调system方法或popen方法去执行一个cli程序   
+php手册首页这样写道：   
+
+	Process Control support in PHP implements the Unix style of process creation, program execution, signal handling and process termination. Process Control should not be enabled within a web server environment and unexpected results may happen if any Process Control functions are used within a web server environment.
+
 
 
 
