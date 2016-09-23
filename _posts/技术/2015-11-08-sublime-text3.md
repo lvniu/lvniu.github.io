@@ -46,3 +46,17 @@ tags: "sublime"
 - 然后打开系统的host文件：C:\Windows\system32\drivers\etc\，在最后添加一行：50.116.33.29 sublime.wbond.net，原理就不细讲了，这个就是域名和IP的一个映射关系。保存，关闭。
 - 重启Sublime，然后ctrl+shift+P, 输入install，就会发现可以解析到插件了。   
 [参考博客](http://blog.csdn.net/u013647382/article/details/46547291)
+
+### 6、Vintage: 给 Vim 党的礼物
+
+在 Preferences -> Settings - User 中的，ignored_packages 中移除 Vintage：
+
+	...
+	"ignored_packages":
+	[
+	    Vintage
+	],
+	...
+
+然后随意打开一个文件，敲击 Esc 键， Vim 的所有操作都会来啦。   
+学习 Vim 很简单，在任何命令行终端里面输入 vimtutor , 就可以开始学习）。
