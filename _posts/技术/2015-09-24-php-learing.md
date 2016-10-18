@@ -631,6 +631,23 @@ php手册首页这样写道：
 
 	Process Control support in PHP implements the Unix style of process creation, program execution, signal handling and process termination. Process Control should not be enabled within a web server environment and unexpected results may happen if any Process Control functions are used within a web server environment.
 
+### 25、Fatal error: Can't use function return value in write context in ……
+
+	$value = 'test';  
+	if (empty(trim($value)))
+	{  
+	    echo 1; 
+	}
+
+乍一看上去很简单，没什么问题，可经过异常排查后确定就是这一小段程序出现了上面的Fatal error~，最后经过查询手册发现empty()方法在最后有这么一小段解释：
+Note: empty() 只检测变量，检测任何非变量的东西都将导致解析错误。换句话说，后边的语句将不会起作用： empty(addslashes($name))。改写成下面方式即可：
+
+	$value = trim('test');  
+	if (empty($value))
+	{  
+	    echo 1; 
+	}
+
 
 
 
